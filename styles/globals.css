@@ -178,6 +178,16 @@ section h2 {
   background: #fee;
 }
 
+.btn-newmonth {
+  background: #FFC000;
+  color: #222;
+  border: 1px solid #d4a000;
+}
+
+.btn-newmonth:hover {
+  background: #e6a800;
+}
+
 .table-wrapper {
   overflow-x: auto;
 }

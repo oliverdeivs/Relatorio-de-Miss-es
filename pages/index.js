@@ -72,6 +72,19 @@ export default function Home() {
     setMissions([])
   }
 
+  const newMonth = () => {
+    if (missions.length === 0) {
+      setForm({ ...initialForm })
+      return
+    }
+    const ok = window.confirm(
+      'As missões atuais serão apagadas.\n\nRecomendo baixar o Excel/PDF antes.\n\nDeseja continuar?'
+    )
+    if (!ok) return
+    setMissions([])
+    setForm({ ...initialForm })
+  }
+
   const totals = missions.reduce((acc, m) => ({
     km: acc.km + (m.km || 0),
     peso: acc.peso + (parseFloat(m.peso) || 0),
@@ -395,6 +408,9 @@ export default function Home() {
           </button>
           <button onClick={exportToPDF} className="btn btn-pdf">
             Baixar PDF
+          </button>
+          <button onClick={newMonth} className="btn btn-newmonth">
+            Novo Mês
           </button>
           <button onClick={clearAll} className="btn btn-danger">
             Limpar Tudo
