@@ -323,22 +323,22 @@ export default function Home() {
               <tbody>
                 {missions.map(m => (
                   <tr key={m.id}>
-                    <td>{m.ordemMissao}</td>
-                    <td>{m.regFabViatura}</td>
-                    <td>{m.motorista}</td>
-                    <td className="num">{m.odometroInicial}</td>
-                    <td className="num">{m.odometroFinal}</td>
-                    <td className="num">{m.km}</td>
-                    <td>{m.destino}</td>
-                    <td>{m.missao}</td>
-                    <td className="num">{m.peso}</td>
-                    <td className="num">{m.volume}</td>
-                    <td>{m.localAbast}</td>
-                    <td className="num">{m.odometroAbast}</td>
-                    <td className="num">{m.qtde}</td>
-                    <td>{m.data}</td>
-                    <td>{m.tku}</td>
-                    <td>
+                    <td data-label="Ordem de Missão">{m.ordemMissao}</td>
+                    <td data-label="REG FAB VIATURA">{m.regFabViatura}</td>
+                    <td data-label="MOTORISTA">{m.motorista}</td>
+                    <td data-label="OD. INICIAL" className="num">{m.odometroInicial}</td>
+                    <td data-label="OD. FINAL" className="num">{m.odometroFinal}</td>
+                    <td data-label="KM" className="num">{m.km}</td>
+                    <td data-label="DESTINO">{m.destino}</td>
+                    <td data-label="MISSÃO">{m.missao}</td>
+                    <td data-label="PESO (KG)" className="num">{m.peso}</td>
+                    <td data-label="VOLUME (m³)" className="num">{m.volume}</td>
+                    <td data-label="LOCAL ABAST.">{m.localAbast}</td>
+                    <td data-label="ODÔMETRO" className="num">{m.odometroAbast}</td>
+                    <td data-label="QTDE (LTS)" className="num">{m.qtde}</td>
+                    <td data-label="DATA">{m.data}</td>
+                    <td data-label="TKU">{m.tku}</td>
+                    <td data-label="">
                       <button onClick={() => removeMission(m.id)} className="btn-remove">✕</button>
                     </td>
                   </tr>
@@ -346,21 +346,21 @@ export default function Home() {
               </tbody>
               <tfoot>
                 <tr>
-                  <td colSpan="2"><strong>TOTAL ODÔMETRO</strong></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td className="num"><strong>{totals.km}</strong></td>
-                  <td></td>
-                  <td><strong>TOTAL PESO x CUBAGEM</strong></td>
-                  <td className="num"><strong>{totals.peso.toFixed(2)}</strong></td>
-                  <td className="num"><strong>{totals.volume.toFixed(3)}</strong></td>
-                  <td></td>
-                  <td></td>
-                  <td className="num"><strong>{totals.qtde.toFixed(1)}</strong></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td colSpan="2" data-label="TOTAL"><strong>TOTAL ODÔMETRO</strong></td>
+                  <td data-label=""></td>
+                  <td data-label=""></td>
+                  <td data-label=""></td>
+                  <td data-label="KM" className="num"><strong>{totals.km}</strong></td>
+                  <td data-label=""></td>
+                  <td data-label="TOTAL"><strong>TOTAL PESO x CUBAGEM</strong></td>
+                  <td data-label="PESO" className="num"><strong>{totals.peso.toFixed(2)}</strong></td>
+                  <td data-label="VOLUME" className="num"><strong>{totals.volume.toFixed(3)}</strong></td>
+                  <td data-label=""></td>
+                  <td data-label=""></td>
+                  <td data-label="QTDE" className="num"><strong>{totals.qtde.toFixed(1)}</strong></td>
+                  <td data-label=""></td>
+                  <td data-label=""></td>
+                  <td data-label=""></td>
                 </tr>
               </tfoot>
             </table>

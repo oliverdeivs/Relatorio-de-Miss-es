@@ -264,11 +264,204 @@ section h2 {
   text-align: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .form-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .form-group-wide {
     grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .header {
+    padding: 14px;
+  }
+
+  .header h1 {
+    font-size: 16px;
+  }
+
+  .period-input {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .date-input {
+    width: 95px;
+  }
+
+  section {
+    padding: 14px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .form-group-wide {
+    grid-column: span 2;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .form-buttons .btn {
+    width: 100%;
+  }
+
+  .export-buttons .btn {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .table-wrapper {
+    overflow: visible;
+  }
+
+  .missions-table {
+    min-width: 0;
+  }
+
+  .missions-table thead {
+    display: none;
+  }
+
+  .missions-table tbody,
+  .missions-table tfoot,
+  .missions-table tr {
+    display: block;
+  }
+
+  .missions-table tbody tr {
+    background: #fff;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .missions-table tbody tr:nth-child(even) {
+    background: #fff;
+  }
+
+  .missions-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+  }
+
+  .missions-table tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .missions-table tbody td.num {
+    text-align: right;
+  }
+
+  .missions-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    font-size: 11px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+
+  .missions-table tbody td:last-child::before {
+    content: '';
+    display: none;
+  }
+
+  .btn-remove {
+    margin-left: auto;
+  }
+
+  .missions-table tfoot tr {
+    display: block;
+    background: #fff3cd;
+    border: 1px solid #d4a000;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .missions-table tfoot td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    border: none;
+    border-bottom: 1px solid #e8d5a0;
+    font-size: 12px;
+  }
+
+  .missions-table tfoot td:last-child {
+    border-bottom: none;
+  }
+
+  .missions-table tfoot td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    font-size: 11px;
+    color: #555;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+
+  .missions-table tfoot td.num {
+    text-align: right;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-wide {
+    grid-column: span 1;
+  }
+
+  .period-row {
+    gap: 4px;
+  }
+
+  .period-row label {
+    font-size: 11px;
+  }
+
+  .period-input {
+    width: 80px;
+    font-size: 11px;
+    padding: 3px 4px;
+  }
+
+  .date-input {
+    width: 75px;
+  }
+
+  .export-buttons {
+    flex-direction: column;
+  }
+
+  .export-buttons .btn {
+    width: 100%;
+  }
+
+  section h2 {
+    font-size: 14px;
   }
 }
