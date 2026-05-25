@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 
 const initialForm = {
   ordemMissao: '',
@@ -22,6 +22,25 @@ export default function Home() {
   const [form, setForm] = useState({ ...initialForm })
   const [period, setPeriod] = useState({ month: 'AGOSTO', start: '01/08/2025', end: '31/08/2025' })
   const tableRef = useRef(null)
+
+  useEffect(() => {
+    const saved = localStorage.getItem('celogMissions')
+    if (saved) {
+      try { setMissions(JSON.parse(saved)) } catch {}
+    }
+    const savedPeriod = localStorage.getItem('celogPeriod')
+    if (savedPeriod) {
+      try { setPeriod(JSON.parse(savedPeriod)) } catch {}
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('celogMissions', JSON.stringify(missions))
+  }, [missions])
+
+  useEffect(() => {
+    localStorage.setItem('celogPeriod', JSON.stringify(period))
+  }, [period])
 
   const handleChange = (field, value) => {
     setForm(prev => ({ ...prev, [field]: value }))
