@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Calibri', 'Arial', sans-serif;
+  background: #f0f2f5;
+  color: #222;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  background: #fff;
+  border: 2px solid #FFC000;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 20px;
+  color: #222;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.period-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.period-row label {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.period-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 13px;
+  width: 140px;
+  text-align: center;
+}
+
+.date-input {
+  width: 130px;
+}
+
+section {
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #FFC000;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-wide {
+  grid-column: span 2;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.form-group input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 13px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #FFC000;
+  box-shadow: 0 0 0 2px rgba(255, 192, 0, 0.15);
+}
+
+.calculated-field {
+  background: #f5f5f5;
+  font-weight: 700;
+  color: #c00;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #FFC000;
+  color: #222;
+}
+
+.btn-primary:hover {
+  background: #e6a800;
+}
+
+.btn-secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #ccc;
+}
+
+.btn-excel {
+  background: #217346;
+  color: #fff;
+}
+
+.btn-excel:hover {
+  background: #165a33;
+}
+
+.btn-pdf {
+  background: #c00;
+  color: #fff;
+}
+
+.btn-pdf:hover {
+  background: #900;
+}
+
+.btn-danger {
+  background: #f5f5f5;
+  color: #c00;
+  border: 1px solid #ccc;
+}
+
+.btn-danger:hover {
+  background: #fee;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.missions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  min-width: 1400px;
+}
+
+.missions-table thead th {
+  background: #FFC000;
+  color: #222;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 8px 6px;
+  text-align: center;
+  border: 1px solid #d4a000;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.missions-table tbody td {
+  padding: 6px;
+  border: 1px solid #d0d0d0;
+  vertical-align: middle;
+}
+
+.missions-table tbody td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.missions-table tbody tr:nth-child(even) {
+  background: #faf8f0;
+}
+
+.missions-table tbody tr:hover {
+  background: #fff8dc;
+}
+
+.missions-table tfoot td {
+  background: #fff3cd;
+  border: 1px solid #d4a000;
+  padding: 8px 6px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.missions-table tfoot td.num {
+  text-align: right;
+}
+
+.btn-remove {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #c00;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 6px;
+  transition: all 0.2s;
+}
+
+.btn-remove:hover {
+  background: #c00;
+  color: #fff;
+  border-color: #c00;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.empty-msg {
+  color: #999;
+  font-style: italic;
+  padding: 20px 0;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form-group-wide {
+    grid-column: span 2;
+  }
+}
